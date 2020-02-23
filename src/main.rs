@@ -12,6 +12,7 @@ fn panic(_info: &PanicInfo) -> ! {
     }
 }
 
+/// Example from https://os.phil-opp.com/freestanding-rust-binary/ (Accessed Feb 2020)
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
     let vga_buffer = 0xb8000 as *mut u8;
@@ -22,6 +23,6 @@ pub extern "C" fn _start() -> ! {
             *vga_buffer.offset(i as isize * 2 + 1) = 0xb;
         }
     }
-    
+
     loop {}
 }
