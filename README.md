@@ -1,12 +1,18 @@
 # binaryno
-Rust binary running on bare metal arm cortex m4.
+Rust binary running on bare ARM CortexM hardware (`thumbv7em-none-eabihf`).
 
-Getting my feet wet with osdev in rust; building a (uni) kernel, based 
+# Scope
+
+I'm getting my feet wet with osdev in rust; building a (uni) kernel, based 
 on [Embedded Systems Architecture](https://www.packtpub.com/application-development/embedded-systems-architecture) 
 the tutorials at [https://os.phil-opp.com](https://os.phil-opp.com).
 
 # Install deps & build
 
+
+Rust `nightly` and `thumbv7em-none-eabihf` target are required to build the binary.
+
+Manual steps:
 ```
 $ cargo install cargo-xbuild
 $ rustup default nightly
