@@ -1,0 +1,15 @@
+name: xbuild
+
+on: [push]
+
+jobs:
+  xbuild:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: cargo install cargo-xbuild
+    - run: rustup default nightly
+    - run: rustup target add thumbv7em-none-eabihf
+    - run: rustup component add rust-src
+    - run: rustup component add llvm-tools-preview
+    - run: cargo xbuild --release
